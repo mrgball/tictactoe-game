@@ -3,11 +3,30 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Custom design system palette */
+  --color-dark-blue: #2F3456; /* DARK BLUE */
+  --color-dark-blue-rgb: 146 182 183;
+  --color-sky-blue: #2AC6EA; /* SKY BLUE */
+  --color-sky-blue-rgb: 42 198 234;
+  --color-sun-yellow: #F7B86E; /* SUN YELLOW */
+  --color-sun-yellow-rgb: 247 184 110;
+  --color-earth: #F2EEEB; /* EARTH / WHITE */
+  --color-earth-rgb: 242 238 235;
+  --color-brick-red: #ED6673; /* BRICK RED */
+  --color-brick-red-rgb: 237 102 115;
+  /* app background (light-mode) */
+  --app-bg: linear-gradient(135deg, var(--color-earth), rgba(var(--color-sky-blue-rgb) / 0.03));
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  /* Expose palette tokens to the inline theme block */
+  --color-primary: var(--color-dark-blue);
+  --color-accent: var(--color-sky-blue);
+  --color-warm: var(--color-sun-yellow);
+  --color-earth: var(--color-earth);
+  --color-danger: var(--color-brick-red);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,6 +35,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    /* app background (dark-mode) */
+    --app-bg: linear-gradient(135deg, rgba(var(--color-dark-blue-rgb) / 0.12), rgba(0,0,0,0.6));
   }
 }
 
